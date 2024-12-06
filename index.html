@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coranu Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-primary text-white py-3 shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="fs-3">Coranu Blog</h1>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-light">Search</button>
+      </form>
+      <a href="signin.html" target="_blank" class="btn btn-light">Login/Register</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container my-4">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-md-3 mb-4">
+        <div class="p-3 bg-light rounded shadow-sm">
+          <h5 class="mb-3">Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none">Company</a></li>
+            <li><a href="#" class="text-decoration-none">Design</a></li>
+            <li><a href="#" class="text-decoration-none">Technology</a></li>
+            <li><a href="#" class="text-decoration-none">Crypto</a></li>
+            <li><a href="#" class="text-decoration-none">AI</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Blog Posts -->
+      <main class="col-md-9">
+        <div class="bg-light p-4 rounded shadow-sm mb-4">
+          <h2 class="fw-bold">Welcome to Coranu Blog</h2>
+          <p>Explore a world of creativity, innovation, and inspiration.</p>
+        </div>
+
+        <!-- Blog Articles -->
+        
+      </main>
+      <ul id="posting">
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Post App Section -->
+  <div id="post_container">
+  <div id="post">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img class="logo" src="Images/logo2.png" alt="" />Post App
+        </a>
+        <div class="profile-photo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png"
+            id="profilePhotoImg"
+            alt="Profile Photo"
+          />
+          <input
+            type="file"
+            id="profilePhotoInput"
+            accept="image/*"
+            style="display: none"
+          />
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="p-4 col-lg-4 col-md-6">
+          <div class="card p-2">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title:</label>
+              <input
+                id="title"
+                type="text"
+                class="form-control"
+                placeholder="Enter title"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description:</label>
+              <textarea
+                id="description"
+                class="form-control"
+                rows="3"
+                placeholder="Enter description"
+              ></textarea>
+            </div>
+            <div class="mt-3">
+              <div class="images d-flex">
+                <img
+                  onclick="selectImg('./Images/bg1.jpg')"
+                  src="./Images/bg1.jpg"
+                  class="bg-img"
+                  alt=""
+                />
+                <img
+                  onclick="selectImg('./Images/bg2.jpg')"
+                  src="./Images/bg2.jpg"
+                  class="bg-img"
+                  alt=""
+                />
+                <img
+                  onclick="selectImg('./Images/bg3.jpg')"
+                  src="./Images/bg3.jpg"
+                  class="bg-img"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="mt-3">
+              <button class="btn postBtn" id="post">Post</button>
+              <button class="btn postBtn" id="logout-btn">logout</button> 
+            </div>
+          </div>
+        </div>
+        <div id="post" class="p-4 col-lg-8 col-md-6"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="firebase.js" type="module"></script>
+  <script src="app.js" type="module"></script>   
+</body>
+</html>
+
+
